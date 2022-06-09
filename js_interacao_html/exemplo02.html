@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="paginaCarregada()">
+    
+    <header id="cabecalho"
+            onMouseOver="efeitoNoHeader(this)"
+            onMouseleave="efeitoNoHeaderMouseNormal(this)">
+        <h1 onclick="clickNoCabecalho()">
+        Cabeçalho
+        </h1>
+    </header>
+
+    <aside>
+        <h2>Corpo</h2>
+    </aside>
+            <button onclick="trocarCabecalho()">Trocar Cabeçalho</button>
+            <button onclick="zerarContador()">Zerar</button>
+    <footer>
+        <h1>Rodapé</h1>
+    </footer>
+
+</body>
+
+
+<script title="text/javascript">
+
+
+const paginaCarregada = () => {
+    alert('A pagina carregou')
+} 
+
+
+const clickNoCabecalho = function (){
+    alert("Você clicou no cabeçalho")
+}
+
+const efeitoNoHeaderMouseNormal = (element) => {
+    element.style.color = "#000000"
+    element.innerHTML= "<h1>Mouse saiu!</h1>"
+}
+
+const efeitoNoHeader = (element) => {
+    element.style.color = "#01AB67";
+    element.innerHTML= "<h1>Mouse Entrou!</h1>"
+} 
+
+let contador = 0;
+
+
+
+const trocarCabecalho = function() {
+    let cabecalho = document.getElementById("cabecalho");
+    contador = contador +1;
+    cabecalho.innerHTML= `<h1 id="cabecalho2"> Contador: ${contador} </h1>`;
+}
+
+const zerarContador = function(){
+    let cabecalho2 = document.getElementById("cabecalho2");
+    contador = 0;
+    cabecalho2.innerHTML= `Contador: ${contador}`;
+    
+}
+
+</script>
+</html>
